@@ -55,4 +55,4 @@ Feel free to contribute.
 
 ## License
 
-MIT License https://github.com/cetic/ansible-role-tomcat8.5/blob/master/LICENSE
+[MIT License](LICENSE)

@@ -40,9 +40,9 @@ jobs:
       matrix:
         include:
           - distro: debian10
-            playbook: tests/playbook.yml
+            playbook: converge.yml
           - distro: debian11
-            playbook: tests/playbook.yml
+            playbook: converge.yml
 
     steps:
       - name: Check out the codebase.

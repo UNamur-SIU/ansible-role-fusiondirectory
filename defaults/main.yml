@@ -1,0 +1,12 @@
+---
+# fd_signing_key: 0xFE0FEAE5AC483A86
+
+fd_packages:
+  - fusiondirectory
+  - fusiondirectory-schema
+  - fusiondirectory-plugin-webservice
+  - fusiondirectory-plugin-webservice-schema
+
+fd_ldap_uri: ldaps://CHANGEME/dc=CHANGEME
+fd_ldap_admin_dn: cn=CHANGEME
+fd_ldap_admin_password: CHANGEME

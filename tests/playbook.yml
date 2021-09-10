@@ -1,0 +1,6 @@
+---
+# Install Fusion Directory
+- hosts: fd
+  become: true
+  roles:
+    - role: '../../vagrant'

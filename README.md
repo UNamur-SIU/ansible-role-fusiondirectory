@@ -7,45 +7,36 @@ Installs [Fusion Directory](https://fusiondirectory-user-manual.readthedocs.io) 
 
 The goal here is to provide a standalone fusiondirectory role that can be added into your playbooks.
 
-The ansible role allows you to install, for the moment, the version 1.3 of Fusion Directory.
+The ansible role allows you to install, for the moment, the version 1.4 of Fusion Directory.
 
 ## Requirements
 
-You can use this ansible role to set up php:
-* 
+No requirements, unless a running openLDAP.
 
 ## Role Variables for Fusion Directory
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-### tomcat
+### fd
 
-	tomcat_version: '8.5.31'
-	tomcat_port: '8080'
-	tomcat_port_ajp: '8009'
-	tomcat_port_https: '8443'
-	tomcat_port_shutdown: '8005'
-	tomcat_group: 'tomcat'
-	tomcat_user: 'tomcat'
-	tomcat_user_home: '/opt/tomcat'
-	
-You can set variables related to tomcat here.
-	
-### geerlingguy php
+Change the variables to your needs.
 
-	java_home: '/lib/jvm/jre-1.8.0-openjdk'
-	
-## Dependencies
+	fd_packages:
+	- fusiondirectory
+	- fusiondirectory-schema
+	- fusiondirectory-plugin-webservice
+	- fusiondirectory-plugin-webservice-schema
 
-  - geerlingguy.php
+	fd_ldap_uri: ldaps://CHANGEME/dc=CHANGEME
+	fd_ldap_admin_dn: cn=CHANGEME
+	fd_ldap_admin_password: CHANGEME
 
 ## Example Playbook
 
 ```yaml
-- hosts: fusiondirectory
+- hosts: fd
   become: true
   roles:
-    - role: geerlingguy.php
     - role: unamur-siu.fusiondirectory
 ```
 
@@ -54,10 +45,6 @@ You can set variables related to tomcat here.
 ### testing locally with [Vagrant](https://www.vagrantup.com/)
 
 You can test this ansible role by using `vagrant`. See the Vagrantfile.
-
-### testing with Travis
-
-See the playbook used for Travis CI tests (tests/test.yml).
 
 ## Future improvements
 

@@ -1,7 +1,7 @@
 # Ansible Role: Fusion Directory
 
 ![Build Status](https://github.com/UNamur-SIU/ansible-role-fusiondirectory/actions/workflows/ci.yml/badge.svg)
-![Ansible Galaxy](https://galaxy.ansible.com/UNamur-SIU/fusiondirectory/)
+![Ansible Galaxy](https://galaxy.ansible.com/unamur/fusiondirectory/)
 
 Installs [Fusion Directory](https://fusiondirectory-user-manual.readthedocs.io) on Debian 10/11 with [ansible](http://www.ansible.com/home).
 

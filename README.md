@@ -3,7 +3,7 @@
 ![Build Status](https://github.com/UNamur-SIU/ansible-role-fusiondirectory/actions/workflows/ci.yml/badge.svg)
 ![Ansible Galaxy](https://galaxy.ansible.com/UNamur-SIU/fusiondirectory/)
 
-Installs [Fusion Directory](https://fusiondirectory-user-manual.readthedocs.io) on Debian 11 with [ansible](http://www.ansible.com/home).
+Installs [Fusion Directory](https://fusiondirectory-user-manual.readthedocs.io) on Debian 10/11 with [ansible](http://www.ansible.com/home).
 
 The goal here is to provide a standalone fusiondirectory role that can be added into your playbooks.
 
@@ -37,7 +37,7 @@ Change the variables to your needs.
 - hosts: fd
   become: true
   roles:
-    - role: unamur-siu.fusiondirectory
+    - role: unamur.fusiondirectory
 ```
 
 ## Tests

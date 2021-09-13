@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  namespace: UNamur-SIU
+  namespace: unamur
   author: Alexandre Nuttinck
   role_name: fusiondirectory
   description: Ansible role to install Fusion Directory

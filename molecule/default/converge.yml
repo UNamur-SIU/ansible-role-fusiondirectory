@@ -3,4 +3,4 @@
   hosts: all
   become: true
   roles:
-    - role: UNamur-SIU.fusiondirectory
+    - role: unamur.fusiondirectory

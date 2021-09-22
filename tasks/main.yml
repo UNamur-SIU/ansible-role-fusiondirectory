@@ -40,11 +40,11 @@
     group: root
 
 - name: Copy apache vhosts configuration.
-  template:
+  ansible.builtin.template:
     src: "{{ fd_apache_vhosts_template }}"
     dest: "/etc/apache2/sites-available/{{ fd_apache_vhosts_filename }}"
     owner: root
     group: root
     mode: 0644
   notify: restart apache
-  when: fd_apache_update_vhosts | bool
+  when: fd_apache_update_vhosts

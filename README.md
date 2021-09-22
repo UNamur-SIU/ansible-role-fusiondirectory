@@ -31,6 +31,11 @@ Change the variables to your needs.
 	fd_ldap_admin_dn: cn=CHANGEME
 	fd_ldap_admin_password: CHANGEME
 
+	fd_apache_update_vhosts: false
+	fd_apache_vhosts_filename: "00-fusiondirectory.conf"
+	fd_apache_vhosts_template: "00-fusiondirectory.conf.j2"
+
+
 ## Example Playbook
 
 ```yaml

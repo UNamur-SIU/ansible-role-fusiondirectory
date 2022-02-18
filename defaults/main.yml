@@ -1,6 +1,4 @@
 ---
-# fd_signing_key: 0xFE0FEAE5AC483A86
-
 fd_packages:
   - fusiondirectory
   - fusiondirectory-schema
@@ -16,3 +14,7 @@ fd_apache_update_vhosts: false
 fd_apache_vhosts_filename: "00-fusiondirectory.conf"
 # set the path of your template here
 fd_apache_vhosts_template: "00-fusiondirectory.conf.j2"
+
+fd_entreprise_setup: false
+fd_entreprise_auth_filename: "auth.conf"
+fd_entreprise_auth_template: "auth.conf.j2"

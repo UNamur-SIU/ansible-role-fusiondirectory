@@ -19,13 +19,29 @@
   ansible.builtin.apt_repository:
     repo: deb https://public.fusiondirectory.org/stretch-fusiondirectory-release/ stretch main
     filename: fusiondirectory-release.list
+  when: not fd_entreprise_setup
+
+- name: Add FusionDirectory entreprise repository
+  ansible.builtin.apt_repository:
+    repo: deb https://enterprise.fusiondirectory.org/buster-fusiondirectory-dev buster main
+    filename: fusiondirectory-entreprise-release.list
+  when: fd_entreprise_setup
+
+- name: Create FusionDirectory Entreprise Auth configuration
+  ansible.builtin.template:
+    src: "{{ fd_entreprise_auth_template }}"
+    dest: "/etc/apt/{{ fd_entreprise_auth_filename }}"
+    mode: 0644
+    owner: root
+    group: root
+  when: fd_entreprise_setup
 
 - name: Add schema2ldif repository
   ansible.builtin.apt_repository:
     repo: deb https://public.fusiondirectory.org/stretch-schema2ldif-release/ stretch main
     filename: schema2ldif-release.list
 
-- name: Install dependencies
+- name: Install fusion directory and other dependencies
   ansible.builtin.apt:
     name: "{{ item }}"
     state: present

@@ -11,7 +11,8 @@ The ansible role allows you to install, for the moment, the version 1.4 of Fusio
 
 ## Requirements
 
-No requirements, unless a running openLDAP.
+* A running openLDAP.
+* If you are using SSL/TLS, you will need to provide your own certificate and key files. You can generate a self-signed certificate with a command like `openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout example.key -out example.crt`.
 
 ## Role Variables for Fusion Directory
 
@@ -29,12 +30,15 @@ Change the variables to your needs.
 
 	fd_ldap_uri: ldaps://CHANGEME/dc=CHANGEME
 	fd_ldap_admin_dn: cn=CHANGEME
-	fd_ldap_admin_password: CHANGEME
+	fd_ldap_admin_password: CHANGEME (you should use ansible-vault for the variable)
 
 	fd_apache_update_vhosts: false
 	fd_apache_vhosts_filename: "00-fusiondirectory.conf"
 	fd_apache_vhosts_template: "00-fusiondirectory.conf.j2"
 
+    fd_entreprise_setup: false
+	fd_entreprise_auth_filename: "auth.conf"
+	fd_entreprise_auth_template: "auth.conf.j2"
 
 ## Example Playbook
 

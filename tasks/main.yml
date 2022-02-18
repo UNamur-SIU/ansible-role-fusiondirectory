@@ -21,12 +21,6 @@
     filename: fusiondirectory-release.list
   when: not fd_entreprise_setup
 
-- name: Add FusionDirectory entreprise repository
-  ansible.builtin.apt_repository:
-    repo: deb https://enterprise.fusiondirectory.org/buster-fusiondirectory-dev buster main
-    filename: fusiondirectory-entreprise-release.list
-  when: fd_entreprise_setup
-
 - name: Create FusionDirectory Entreprise Auth configuration
   ansible.builtin.template:
     src: "{{ fd_entreprise_auth_template }}"
@@ -34,6 +28,12 @@
     mode: 0644
     owner: root
     group: root
+  when: fd_entreprise_setup
+
+- name: Add FusionDirectory entreprise repository
+  ansible.builtin.apt_repository:
+    repo: deb https://enterprise.fusiondirectory.org/buster-fusiondirectory-dev buster main
+    filename: fusiondirectory-entreprise-release.list
   when: fd_entreprise_setup
 
 - name: Add schema2ldif repository
